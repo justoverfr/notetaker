@@ -8,9 +8,6 @@ dependencies:
   '@auth/drizzle-adapter':
     specifier: ^0.3.2
     version: 0.3.5
-  '@planetscale/database':
-    specifier: ^1.11.0
-    version: 1.11.0
   '@t3-oss/env-nextjs':
     specifier: ^0.7.0
     version: 0.7.1(typescript@5.2.2)(zod@3.22.4)
@@ -31,13 +28,16 @@ dependencies:
     version: 10.43.0
   drizzle-orm:
     specifier: ^0.28.5
-    version: 0.28.6(@planetscale/database@1.11.0)(mysql2@3.6.2)
+    version: 0.28.6(mysql2@3.6.2)(postgres@3.4.2)
   next:
     specifier: ^13.5.4
     version: 13.5.6(react-dom@18.2.0)(react@18.2.0)
   next-auth:
     specifier: ^4.23.0
     version: 4.24.4(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
+  postgres:
+    specifier: ^3.4.2
+    version: 3.4.2
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -563,11 +563,6 @@ packages:
 
   /@panva/hkdf@1.1.1:
     resolution: {integrity: sha512-dhPeilub1NuIG0X5Kvhh9lH4iW3ZsHlnzwgwbOlgwQ2wG1IqFzsgHqmKPk3WzsdWAeaxKJxgM0+W433RmN45GA==}
-    dev: false
-
-  /@planetscale/database@1.11.0:
-    resolution: {integrity: sha512-aWbU+D/IRHoDE9975y+Q4c+EwwAWxCPwFId+N1AhQVFXzbeJMkj6KN2iQtoi03elcLMRdfT+V3i9Z4WRw+/oIA==}
-    engines: {node: '>=16'}
     dev: false
 
   /@rushstack/eslint-patch@1.5.1:
@@ -1367,7 +1362,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.28.6(@planetscale/database@1.11.0)(mysql2@3.6.2):
+  /drizzle-orm@0.28.6(mysql2@3.6.2)(postgres@3.4.2):
     resolution: {integrity: sha512-yBe+F9htrlYER7uXgDJUQsTHFoIrI5yMm5A0bg0GiZ/kY5jNXTWoEy4KQtg35cE27sw1VbgzoMWHAgCckUUUww==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -1429,8 +1424,8 @@ packages:
       sqlite3:
         optional: true
     dependencies:
-      '@planetscale/database': 1.11.0
       mysql2: 3.6.2
+      postgres: 3.4.2
     dev: false
 
   /electron-to-chromium@1.4.569:
@@ -2991,6 +2986,11 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
+
+  /postgres@3.4.2:
+    resolution: {integrity: sha512-0UcCGvDBSaAzLeWwiq+QVmiGfOPTosFb+sxJUUtd+7Pi/ByFPuz6Gq05LbS0sM1ghMWC5atuks3pfl34g0qmFw==}
+    engines: {node: '>=12'}
+    dev: false
 
   /preact-render-to-string@5.2.3(preact@10.11.3):
     resolution: {integrity: sha512-aPDxUn5o3GhWdtJtW0svRC2SS/l8D9MAgo2+AWml+BhDImb27ALf04Q2d+AHqUUOc6RdSXFIBVa2gxzgMKgtZA==}
